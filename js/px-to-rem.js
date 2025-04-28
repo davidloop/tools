@@ -20,6 +20,7 @@
     const $base = $("[id=baseFontSize]");
     const $pixels = $("[id=pxValue]");
     const $rems = $("[id=remValue]");
+    const $pts = $("[id=ptValue]");
     let lastEdited = 'px';
 
     function pxToRem(px, base) {
@@ -28,6 +29,14 @@
 
     function remToPx(rem, base) {
         return (rem * base).toFixed(2);
+    }
+
+    function pxToPt(px) {
+        return (px * 0.75).toFixed(2);
+    }
+
+    function ptToPx(pt) {
+        return (pt / 0.75).toFixed(2);
     }
 
     function trimZeros(num) {
@@ -41,12 +50,23 @@
         if (lastEdited === 'px') {
             const px = parseFloat($pixels.val());
             if (!isNaN(px)) {
-                $rems.val(trimZeros(pxToRem(px, base)));
+                const remValue = trimZeros(pxToRem(px, base));
+                $rems.val(remValue);
+                $pts.val(trimZeros(pxToPt(px)));
             }
         } else if (lastEdited === 'rem') {
             const rem = parseFloat($rems.val());
             if (!isNaN(rem)) {
-                $pixels.val(Math.round(remToPx(rem, base)));
+                const px = parseFloat(remToPx(rem, base));
+                $pixels.val(Math.round(px));
+                $pts.val(trimZeros(pxToPt(px)));
+            }
+        } else if (lastEdited === 'pt') {
+            const pt = parseFloat($pts.val());
+            if (!isNaN(pt)) {
+                const px = parseFloat(ptToPx(pt));
+                $pixels.val(Math.round(px));
+                $rems.val(trimZeros(pxToRem(px, base)));
             }
         }
     });
@@ -62,7 +82,9 @@
             const base = parseFloat($base.val()) || 16;
         
             if (!isNaN(px)) {
-                $rems.val(trimZeros(pxToRem(px, base)));
+                const remValue = trimZeros(pxToRem(px, base));
+                $rems.val(remValue);
+                $pts.val(trimZeros(pxToPt(px)));
             }
         }
     });
@@ -78,7 +100,27 @@
             const base = parseFloat($base.val()) || 16;
 
             if (!isNaN(rem)) {
-                $pixels.val(Math.round(remToPx(rem, base)));
+                const px = remToPx(rem, base);
+                $pixels.val(Math.round(px));
+                $pts.val(trimZeros(pxToPt(px)));
+            }
+        }
+    });
+
+    $pts.on('focus', function() {
+        lastEdited = 'pt';
+    });
+
+    $pts.on('keyup', function() {
+        const ptVal = $(this).val();
+        if (ptVal !== '') {
+            const pt = parseFloat(ptVal);
+            const base = parseFloat($base.val()) || 16;
+    
+            if (!isNaN(pt)) {
+                const px = ptToPx(pt);
+                $pixels.val(Math.round(px));
+                $rems.val(trimZeros(pxToRem(px, base)));
             }
         }
     });
