@@ -42,7 +42,7 @@
         for (const [value, name] of Object.entries(ratios)) {
             $ratio.append(`<option value="${value}">${name}</option>`);
         }
-        // Set default to Perfect Fifth
+        // Set default to Minor Second
         $ratio.val("1.067");
     }
     
