@@ -124,11 +124,70 @@
             </div>
         </div>
     </section>
+    <section class="padding-top-bottom-45 border-top">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2>Image Compression</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <div class="form-group margin-bottom-20 text-center">
+                                <label for="imageUpload" class="margin-bottom-10">Add Image</label>
+                                <div id="dropZone" class="drop-zone margin-bottom-10">
+                                    <input type="file" class="form-control-file" id="imageUpload" accept="image/*">
+                                    <div class="drop-zone-prompt">
+                                        <p>Drag & drop image here or click to browse</p>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Supports JPEG, PNG, WebP, GIF, and BMP formats. Output will be in the same format as input for JPEG, PNG, and WebP. Other formats will be converted to JPEG.</small>
+                            </div>
+                            <div class="form-group margin-bottom-30">
+                                <label for="qualitySlider" class="w-100 margin-bottom-10 text-center">Compression Quality: <span id="qualityValue">80%</span></label>
+                                <input type="range" class="form-control-range" id="qualitySlider" min="0" max="100" value="80">
+                            </div>
+                            <div class="form-group d-flex justify-content-center margin-bottom-30">
+                                <button id="compressBtn" class="btn btn-primary" disabled>Compress Image</button>
+                                <a id="downloadBtn" class="btn btn-success ml-2" download="compressed-image.jpg" style="display: none;">Download</a>
+                                <button id="resetBtn" class="btn btn-secondary ml-2">Reset</button>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header text-center">Original Image</div>
+                                        <div class="card-body text-center" id="originalImageContainer">
+                                            <p class="text-muted"><small>No image selected</small></p>
+                                        </div>
+                                        <div class="card-footer" id="originalInfo"></div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-header text-center">Compressed Image</div>
+                                        <div class="card-body text-center" id="compressedImageContainer">
+                                            <p class="text-muted"><small>Compress an image to see result</small></p>
+                                        </div>
+                                        <div class="card-footer" id="compressedInfo"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/px-to-rem.js"></script>
 <script type="text/javascript" src="js/ratios.js"></script>
 <script type="text/javascript" src="js/modular-scale.js"></script>
+<script type="text/javascript" src="js/image-compressor.js"></script>
 </body>
 </html>
