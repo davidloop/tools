@@ -49,7 +49,7 @@
     // Calculate modular scale
     function calculateScale() {
         const baseSize = parseFloat($baseSize.val()) || 16;
-        const ratio = parseFloat($ratio.val()) || 1.5;
+        const ratio = parseFloat($ratio.val()) || 1.067;
         
         // Generate 10 steps (5 up, 4 down from base)
         let scale = [];
