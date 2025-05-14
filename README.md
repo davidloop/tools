@@ -1,1 +1,1 @@
-https:www.davidloop.com/tools/
+www.davidloop.com/tools/
