@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 function RatioCalculator() {
   const [ratio, setRatio] = useState('16:9');
-  const [width, setWidth] = useState('');
-  const [height, setHeight] = useState('');
+  const [width, setWidth] = useState('1440');
+  const [height, setHeight] = useState('810');
   const [lastEdited, setLastEdited] = useState('width');
 
   // Get ratio values as numbers
