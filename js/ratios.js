@@ -20,8 +20,6 @@
     const $ratio = $("[id=ratio]");
     const $width = $("[id=width]");
     const $height = $("[id=height]");
-
-    $width.val(1440);
     
     function getRatioValues() {
         const ratio = $ratio.val().split(':');

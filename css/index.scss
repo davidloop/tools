@@ -72,3 +72,34 @@ select {
 ::-webkit-input-placeholder {
 	color: cornflowerblue !important;
 }
+
+table {
+    line-height: 1.25;
+
+    td {
+        min-width: 80px;
+        max-width: 800px;
+    }
+
+    td, th {
+
+        &:not(:nth-child(4)) {
+            text-align: center;
+            position: relative;
+    
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: block; 
+        overflow: hidden;
+    }
+}

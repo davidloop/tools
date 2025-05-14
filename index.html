@@ -30,15 +30,13 @@
     </div>
 </header>
 <main>
-
-    <!-- simple accordion -->
     <section class="padding-top-bottom-45">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h2>PX to REM Font Conversion</h2>
+                    <h2>PX to REM to PT Text Size Conversion</h2>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <div class="row">
                         <div class="col-3 text-center">
                             <input type="text" value="" id="baseFontSize" placeholder="16">
@@ -54,7 +52,7 @@
                         </div>
                         <div class="col-3 text-center">
                             <input type="text" value="" id="ptValue" placeholder="12">
-                            <label for="em">PT</label>
+                            <label for="ptValue">PT</label>
                         </div>
                     </div> 
                 </div>
@@ -62,14 +60,14 @@
         </div>
     </section>
     <section class="padding-top-bottom-45 border-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
                     <h2>Ratio Calculator</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-5">
                     <div class="row">
                         <div class="col-4 text-center">
                             <select id="ratio">
@@ -94,10 +92,43 @@
             </div>
         </div>
     </section>
+    <section class="padding-top-bottom-45 border-top">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2>Modular Scale Font Size</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <input type="text" id="msBaseSize" placeholder="16" value="">
+                            <label for="msBaseSize">Base</label>
+                        </div>
+                        <div class="col-8 text-center">
+                            <select id="msRatio">
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                            <label for="msRatio">Ratio</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-10">
+                    <div id="msScaleOutput">
+                        <!-- Scale output will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="js/px-to-rem.js"></script>
 <script type="text/javascript" src="js/ratios.js"></script>
+<script type="text/javascript" src="js/modular-scale.js"></script>
 </body>
 </html>
