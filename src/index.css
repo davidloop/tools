@@ -17176,20 +17176,25 @@ header h1 {
   letter-spacing: 5px;
 }
 
-.tool-nav {
+nav {
+  padding: 0 0 30px 0;
   background: #f7f7f7;
   border-bottom: 1px solid gainsboro;
-  padding: 0 0 30px 0;
+  font-size: 14px;
+  font-weight: 600;
 }
-.tool-nav button {
-  margin: 0 10px;
+nav a {
+  margin: 0 8px;
   padding: 10px 20px;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   line-height: 1.4;
 }
-.tool-nav button.active, .tool-nav button:hover.active, .tool-nav button:hover {
+nav a.current, nav a:hover.current, nav a:hover {
   background: rgba(0, 0, 0, 0.1);
+  color: #0056b3;
+  text-decoration: none;
 }
 
 h2 {

@@ -73,7 +73,7 @@ function ModularScale() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12">
-            <h2>Modular Scale Font Size</h2>
+            <h2>Modular Font Size Scale</h2>
           </div>
           <div className="col-md-5">
             <div className="row">
