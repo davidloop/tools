@@ -5,6 +5,8 @@
   "homepage": ".",
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "framer-motion": "^12.15.0",
+    "motion": "^12.15.0",
     "postcss-pxtorem": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

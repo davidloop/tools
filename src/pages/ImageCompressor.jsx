@@ -254,7 +254,7 @@ function ImageCompressor() {
               </div>
               <div className="col-12">
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-6">
                     <div className="card">
                       <div className="card-header text-center">Original Image</div>
                       <div className="card-body text-center">
@@ -271,7 +271,7 @@ function ImageCompressor() {
                       <div className="card-footer text-center">{originalInfo}</div>
                     </div>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-6">
                     <div className="card">
                       <div className="card-header text-center">Compressed Image</div>
                       <div className="card-body text-center">

@@ -16,10 +16,13 @@ header {
     h1 {
         margin: 0;
         color: gray;
-        font-size: 20px;
+        font-size: 14px;
         line-height: normal;
         text-transform: uppercase;
-        letter-spacing: 5px;
+    }
+
+    @media (max-width: 991px) {
+        padding: 15px 0;
     }
 }
 
@@ -31,17 +34,35 @@ nav {
     font-weight: 600;
 
     a {
-        margin: 0 8px;
-        padding: 10px 20px;
-        background: rgba(black, 0.05);
-        border: 1px solid rgba(black, 0.1);
-        border-radius: 4px;
+        margin: 0 4px;
+        padding: 6px 12px;
         line-height: 1.4;
+        position: relative;
 
         &.current, &:hover.current, &:hover {
-            background: rgba(black, 0.1);
             color: #0056b3;
             text-decoration: none;
+        }
+
+        span {
+            height: 100%;
+            width: 100%;
+            background: rgba(black, 0.1);
+            border-radius: 4px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 0 0 15px 0;
+
+        a {
+            width: fit-content;
+            margin: 0 auto;
+            display: block;
         }
     }
 }
@@ -211,4 +232,28 @@ table {
 .card-footer {
     color: #dc3545;
     font-size: 14px;
+}
+
+@media (max-width: 991px) {
+    
+    .tool-section {
+        
+        [class*="col"] {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+
+    .table span {
+        white-space: wrap;
+        text-align: center;
+    }
+
+    .drop-zone {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
 }

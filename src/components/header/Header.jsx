@@ -6,7 +6,7 @@ function Header() {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1>Tools</h1>
+            <h1>Tools For Web Nerds</h1>
           </div>
         </div>
       </div>

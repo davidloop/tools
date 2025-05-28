@@ -17170,10 +17170,14 @@ header {
 header h1 {
   margin: 0;
   color: gray;
-  font-size: 20px;
+  font-size: 14px;
   line-height: normal;
   text-transform: uppercase;
-  letter-spacing: 5px;
+}
+@media (max-width: 991px) {
+  header {
+    padding: 15px 0;
+  }
 }
 
 nav {
@@ -17184,17 +17188,36 @@ nav {
   font-weight: 600;
 }
 nav a {
-  margin: 0 8px;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  margin: 0 4px;
+  padding: 6px 12px;
   line-height: 1.4;
+  position: relative;
 }
 nav a.current, nav a:hover.current, nav a:hover {
-  background: rgba(0, 0, 0, 0.1);
   color: #0056b3;
   text-decoration: none;
+}
+nav a span {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 991px) {
+  nav {
+    padding: 0 0 15px 0;
+  }
+  nav a {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 h2 {
@@ -17351,4 +17374,23 @@ table span {
 .card-footer {
   color: #dc3545;
   font-size: 14px;
+}
+
+@media (max-width: 991px) {
+  .tool-section [class*=col] {
+    max-width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .table span {
+    white-space: wrap;
+    text-align: center;
+  }
+  .drop-zone {
+    width: 100%;
+  }
+  .card {
+    margin-bottom: 15px;
+  }
 }/*# sourceMappingURL=index.css.map */
