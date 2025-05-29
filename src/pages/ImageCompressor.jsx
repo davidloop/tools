@@ -180,7 +180,7 @@ function ImageCompressor() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12">
-            <h2>Image Compressorx</h2>
+            <h2>Image Compressor</h2>
           </div>
           <div className="col-10">
             <div className="row justify-content-center">
