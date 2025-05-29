@@ -12,7 +12,6 @@ let links = [
 function NavigationMain() {
     const location = useLocation();
     const currentPath = location.pathname.replace(/^\/+|\/+$/g, '');
-    let [activeLink, setActiveLink] = useState(links[0].id);
 
     return (
         <div className="container">
