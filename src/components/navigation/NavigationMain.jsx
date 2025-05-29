@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 let links = [
@@ -10,28 +10,33 @@ let links = [
 ];
 
 function NavigationMain() {
+    const location = useLocation();
+    const currentPath = location.pathname.replace(/^\/+|\/+$/g, '');
     let [activeLink, setActiveLink] = useState(links[0].id);
 
     return (
         <div className="container">
             <div className="row">
                 <div className="col text-center">
-                    {links.map((link) => (
-                        <NavLink
-                            key={link.id}
-                            to={`/${link.id}`}
-                            onClick={() => setActiveLink(link.id)}
-                            className={(navData) => navData.isActive ? 'current' : ''}
-                        >
-                            {link.label}
-                            {activeLink === link.id && (
-                                <motion.span
-                                    layoutId="background"
-                                    transition={{ type: "spring", bounce: 0.2, duration: 0.3 }}
-                                />
-                            )}
-                        </NavLink>
-                    ))}
+                    {links.map((link) => {
+                        const isActive = currentPath === link.id;
+
+                        return (
+                            <NavLink
+                                key={link.id}
+                                to={`/${link.id}`}
+                                className={({ isActive }) => isActive ? 'current' : ''}
+                            >
+                                {link.label}
+                                {isActive && (
+                                    <motion.span
+                                        layoutId="background"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.3 }}
+                                    />
+                                )}
+                            </NavLink>
+                        );
+                    })}
                 </div>
             </div>
         </div>
